@@ -4,7 +4,7 @@ from init import *
 from functions import *
 
 
-direction ="DOWN"
+direction ="RIGHT"
 clock = pygame.time.Clock()
 
 while True:
@@ -15,13 +15,13 @@ while True:
             sys.exit()
 
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_UP:
+            if event.key == pygame.K_UP and direction != "DOWN":
                 direction = "UP"
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_DOWN and direction != "UP":
                 direction = "DOWN"
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_RIGHT and direction != "LEFT":
                 direction = "RIGHT"
-            elif event.key == pygame.K_LEFT:
+            elif event.key == pygame.K_LEFT and direction != "RIGHT":
                 direction = "LEFT"
 
 

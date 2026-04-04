@@ -17,16 +17,27 @@ def show(surface, snake):
 def update(snake, direction):
     snake.pop(0)
     if direction == "RIGHT":
-        snake.append([snake[-1][0] + 1, snake[-1][1]])
+        if snake[-1][0]+1 > (WIN_SIZE[1]//TILE_SIZE) - 1:
+            snake.append([0, snake[-1][1]])
+        else:
+            snake.append([snake[-1][0] + 1, snake[-1][1]])
 
     elif direction == "LEFT":
-        snake.append([snake[-1][0] - 1, snake[-1][1]])
-        
+        if snake[-1][0]-1 < 0:
+            snake.append([(WIN_SIZE[1]//TILE_SIZE) - 1, snake[-1][1]])
+        else:
+            snake.append([snake[-1][0] - 1 , snake[-1][1]])
+
     elif direction == "UP":
-        snake.append([snake[-1][0], snake[-1][1] - 1])
+        if snake[-1][1]-1 < 0:
+            snake.append([snake[-1][0], (WIN_SIZE[0]//TILE_SIZE) - 1])  
+        else:
+            snake.append([snake[-1][0], snake[-1][1] - 1])
 
     elif direction == "DOWN":
-        snake.append([snake[-1][0], snake[-1][1]+1])
-    
+        if snake[-1][1]+1 > (WIN_SIZE[1]//TILE_SIZE) - 1:
+            snake.append([snake[-1][0], 0])
+        else:
+            snake.append([snake[-1][0], snake[-1][1]+1])
 
     return snake
