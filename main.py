@@ -6,8 +6,11 @@ from functions import *
 
 direction ="RIGHT"
 clock = pygame.time.Clock()
+food = generate_food(snake)
+alive = True
 
-while True:
+
+while alive:
     game_display.fill((0, 0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -25,7 +28,7 @@ while True:
                 direction = "LEFT"
 
 
-    snake = update(snake, direction)
-    show(game_display, snake)
+    snake, food, alive = update(snake, food, direction, alive)
+    show(game_display, snake, food)
     pygame.display.update()
     clock.tick(SPEED)

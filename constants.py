@@ -10,4 +10,4 @@ snake = [[0, (WIN_SIZE[1]//TILE_SIZE)//2],
          [2, (WIN_SIZE[1]//TILE_SIZE)//2]]
 
 
-SPEED = 5
+SPEED = 7
