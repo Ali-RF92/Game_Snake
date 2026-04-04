@@ -51,7 +51,7 @@ def update(snake, food, direction, alive, speed):
     else:
         if alive:
             food = generate_food(snake)
-            speed += 1
+            speed = min(speed + 1, 12)
     if snake[-1] in snake[:-1]:
         alive = False
     return snake, food, alive, speed
