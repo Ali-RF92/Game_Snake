@@ -55,10 +55,17 @@ def update(snake, food, direction, alive):
         alive = False
     return snake, food, alive
 
-
-
 def generate_food(snake):
     food = [rnd(0, (WIN_SIZE[0]//TILE_SIZE) - 1), rnd(0, (WIN_SIZE[1]//TILE_SIZE) - 1)]
     while food in snake:
         food = [rnd(0, (WIN_SIZE[0]//TILE_SIZE) - 1), rnd(0, (WIN_SIZE[1]//TILE_SIZE) - 1)]
     return food
+
+def restart():
+    snake = [[0, (WIN_SIZE[1]//TILE_SIZE)//2],
+             [1, (WIN_SIZE[1]//TILE_SIZE)//2],
+             [2, (WIN_SIZE[1]//TILE_SIZE)//2]]
+    food = generate_food(snake)
+    direction = "RIGHT"
+    alive = True
+    return snake, food, direction, alive

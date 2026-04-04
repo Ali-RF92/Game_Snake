@@ -11,3 +11,5 @@ snake = [[0, (WIN_SIZE[1]//TILE_SIZE)//2],
 
 
 SPEED = 7
+
+DELAY = 5
