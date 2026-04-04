@@ -20,7 +20,7 @@ def show(surface, snake, food):
                            TILE_SIZE),
                            )
 
-def update(snake, food, direction, alive):
+def update(snake, food, direction, alive, speed):
 
     if direction == "RIGHT":
         if snake[-1][0]+1 > (WIN_SIZE[1]//TILE_SIZE) - 1:
@@ -51,10 +51,10 @@ def update(snake, food, direction, alive):
     else:
         if alive:
             food = generate_food(snake)
-
+            speed += 1
     if snake[-1] in snake[:-1]:
         alive = False
-    return snake, food, alive
+    return snake, food, alive, speed
 
 def generate_food(snake):
     food = [rnd(0, (WIN_SIZE[0]//TILE_SIZE) - 1), rnd(0, (WIN_SIZE[1]//TILE_SIZE) - 1)]
@@ -69,4 +69,5 @@ def restart():
     food = generate_food(snake)
     direction = "RIGHT"
     alive = True
-    return snake, food, direction, alive
+    speed = 7
+    return snake, food, direction, alive, speed

@@ -28,13 +28,13 @@ while True:
                 direction = "LEFT"
 
 
-    snake, food, alive = update(snake, food, direction, alive)
+    snake, food, alive, SPEED = update(snake, food, direction, alive, SPEED)
     
     if not alive:
         direction = ""
         if DELAY == 0:
             DELAY = 10
-            snake, food, direction, alive = restart()
+            snake, food, direction, alive, SPEED = restart()
         else:
             DELAY -= 1
 
