@@ -116,12 +116,6 @@ python main.py
 
 ---
 
-## 📸 Preview
-
-*(Add a screenshot or GIF here)*
-
----
-
 ## 👤 Author
 
 Ali-RF92
