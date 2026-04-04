@@ -33,11 +33,11 @@ while True:
     if not alive:
         direction = ""
         if DELAY == 0:
-            DELAY = 5
+            DELAY = 10
             snake, food, direction, alive = restart()
         else:
             DELAY -= 1
-            
+
     show(game_display, snake, food)
     pygame.display.update()
     clock.tick(SPEED)

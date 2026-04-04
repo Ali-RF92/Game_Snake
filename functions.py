@@ -46,10 +46,11 @@ def update(snake, food, direction, alive):
         else:
             snake.append([snake[-1][0], snake[-1][1]+1])
 
-    if food not in snake:
+    if food not in snake and alive:
         snake.pop(0)
     else:
-        food = generate_food(snake)
+        if alive:
+            food = generate_food(snake)
 
     if snake[-1] in snake[:-1]:
         alive = False
