@@ -1,15 +1,31 @@
 import pygame
 import sys
+from init import *
+from functions import *
 
 
-pygame.init()
-game_display = pygame.display.set_mode((400, 400))
-pygame.display.set_caption("Game: Snake")
+direction ="DOWN"
+clock = pygame.time.Clock()
 
 while True:
+    game_display.fill((0, 0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_UP:
+                direction = "UP"
+            elif event.key == pygame.K_DOWN:
+                direction = "DOWN"
+            elif event.key == pygame.K_RIGHT:
+                direction = "RIGHT"
+            elif event.key == pygame.K_LEFT:
+                direction = "LEFT"
+
+
+    snake = update(snake, direction)
+    show(game_display, snake)
     pygame.display.update()
+    clock.tick(SPEED)
