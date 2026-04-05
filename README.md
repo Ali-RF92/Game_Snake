@@ -1,127 +1,67 @@
-# 🐍 Snake Game (Python + Pygame)
+🐍 Snake Game — Python & Pygame
 
-A simple Snake game built using **Python** and **Pygame**.
-This project is part of my learning journey in game development and Python.
+A classic Snake game built with Python and Pygame, developed as part of my hands-on learning in game development and real-time systems.
 
----
+This project focuses on implementing core game mechanics, clean architecture, and responsive gameplay using a modular Python structure.
 
-## 🎮 Features
+🎮 Gameplay Overview
+Control the snake using arrow keys
+Eat food to grow longer and increase speed
+Avoid colliding with yourself
+Game automatically restarts after death
+✨ Key Features
+Real-time keyboard input handling
+Grid-based movement system
+Dynamic speed scaling based on score
+Self-collision detection
+Automatic game restart with delay
+Clean modular architecture (separation of concerns)
+🧠 Technical Highlights
+Structured game loop with clear state management
+Separation of logic into dedicated modules
+Frame-rate control (max 12 FPS) for consistent gameplay
+Scalable design for adding features (levels, UI, effects)
+🛠️ Tech Stack
+Python 3.11
+Pygame
 
-* Classic Snake gameplay
-* Real-time movement using keyboard (Arrow keys)
-* Food generation system
-* Score-based speed increase
-* Maximum speed limit (12 FPS)
-* Collision detection (self-collision)
-* Game restart system after death
-
----
-
-## 🛠️ Technologies Used
-
-* Python 3.11
-* Pygame
-
----
-
-## 📂 Project Structure
-
-```
-Game_Snake/
-│
-├── main.py          # Main game loop
-├── init.py          # Game initialization (window setup)
-├── constants.py     # Game settings and constants
-├── utils.py         # Game logic (update, draw, food, restart)
-└── venv311/         # Virtual environment (not required in repo)
-```
-
----
-
-## ⚙️ Installation
-
-1. Clone the repository:
-
-```bash
+⚙️ Setup & Installation
+# Clone repository
 git clone https://github.com/your-username/snake-game.git
 cd snake-game
-```
 
-2. Create virtual environment:
+# Create virtual environment
+python -m venv venv311
+venv311\Scripts\activate
 
-```bash
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-3. Install dependencies:
-
-```bash
+# Install dependencies
 pip install pygame
-```
-
----
-
-## ▶️ Run the Game
-
-```bash
+▶️ Run the Game
 python main.py
-```
-
----
-
-## 🎯 Controls
-
-| Key | Action     |
-| --- | ---------- |
-| ↑   | Move Up    |
-| ↓   | Move Down  |
-| →   | Move Right |
-| ←   | Move Left  |
-
----
-
-## 🚀 Game Logic
-
-* The snake moves in a grid system.
-* When it eats food:
-
-  * The snake grows
-  * Speed increases (up to max = 12)
-* If the snake hits itself:
-
-  * Game ends
-  * Automatically restarts after delay
-
----
-
-## 🧠 Learning Goals
-
-* Understanding game loops
-* Handling user input
-* Working with 2D grids
-* Managing state (alive, direction, speed)
-* Structuring Python projects
-
----
-
-## 📌 Future Improvements
-
-* Add score display
-* Add sound effects
-* Add pause feature
-* Add levels/difficulty modes
-* Improve graphics (filled blocks instead of borders)
-
----
-
-## 👤 Author
+🎯 Controls
+Key	Action
+↑	Move Up
+↓	Move Down
+→	Move Right
+←	Move Left
+🚀 Game Mechanics
+The snake moves on a fixed grid
+Eating food:
+Increases snake length
+Increases speed (up to max 12 FPS)
+Self-collision:
+Ends the game
+Triggers automatic restart after delay
+📈 Future Improvements
+Score display UI
+Sound effects
+Pause functionality
+Difficulty levels
+Enhanced graphics (filled tiles, animations)
+👤 Author
 
 Ali-RF92
 
----
+⭐ Support
 
-## ⭐️ Support
-
-If you like this project, consider giving it a ⭐ on GitHub!
+If you found this project interesting, consider giving it a ⭐ on GitHub.
